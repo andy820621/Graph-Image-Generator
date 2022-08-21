@@ -199,7 +199,7 @@ window.addEventListener("keydown", (e) => {
 		<div class="control">
 			<h3>Control</h3>
 			<div class="input-control">
-				<label>Width</label>
+				<label>Width:</label>
 				<input
 					type="number"
 					v-model.number="data.settings.width"
@@ -207,7 +207,7 @@ window.addEventListener("keydown", (e) => {
 				/>
 			</div>
 			<div class="input-control">
-				<label>Height</label>
+				<label>Height:</label>
 				<input
 					type="number"
 					v-model.number="data.settings.height"
@@ -252,7 +252,7 @@ button,
 	display: flex;
 }
 main.row {
-	gap: 2.4rem;
+	gap: 2.4vw;
 	@media (max-width: 768px) {
 		flex-direction: column-reverse;
 	}
@@ -260,6 +260,11 @@ main.row {
 		padding: 0;
 		cursor: pointer;
 		user-select: none;
+		@media (max-width: 768px) {
+			font-size: 2rem;
+			text-align: center;
+			margin-bottom: 1rem;
+		}
 		input[type="checkbox"] {
 			opacity: 0;
 			visibility: 0;
@@ -302,7 +307,20 @@ main.row {
 			padding: 0.24rem 0.5rem;
 			border: none;
 			border-radius: 0.24rem;
-			max-width: 80vmin;
+		}
+		@media (max-width: 768px) {
+			width: 80vmin;
+			min-width: 20rem;
+			margin-inline: auto;
+			button {
+				padding: 0.3rem 0.7rem;
+				font-size: 1.2rem;
+			}
+			textarea {
+				margin-right: auto;
+				width: 80%;
+				min-width: 18rem;
+			}
 		}
 		.input-control,
 		.btn-control,
@@ -311,6 +329,7 @@ main.row {
 		}
 		.input-control {
 			gap: 1rem;
+			align-items: center;
 		}
 		.btn-control {
 			gap: 2rem;
@@ -325,11 +344,18 @@ main.row {
 	}
 }
 .graph {
-	.block {
-		@include size(5vmin);
-		@media (min-width: 768px) {
-			@include size(3.5vmin);
+	.row {
+		width: min-content;
+		@media (max-width: 768px) {
+			margin-inline: auto;
 		}
+	}
+	.block {
+		@media (max-width: 768px) {
+			@include size(5vmin);
+			margin: 0 auto;
+		}
+		@include size(3.5vmin);
 		border: 1px solid #ddd;
 		background-color: #eee;
 		color: #333;
@@ -367,7 +393,7 @@ main.row {
 		row-gap: 1.6rem;
 		width: 80%;
 		@media (min-width: 768px) {
-			width: 60vmin;
+			width: calc(3.5vmin * 15);
 		}
 		li {
 			position: relative;
