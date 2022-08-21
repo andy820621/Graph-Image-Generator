@@ -3,11 +3,13 @@
 *::after {
 	box-sizing: border-box;
 }
+html {
+	font-family: "Segoe UI", sans-serif;
+}
 html,
 body {
 	background-color: #282f38;
 	color: #fff;
 	display: flex;
 	justify-content: center;
-	margin-top: 1.25rem;
 }

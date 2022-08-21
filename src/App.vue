@@ -110,6 +110,8 @@ window.addEventListener("keydown", (e) => {
 </script>
 
 <template>
+	<h1>Graph Data Generator</h1>
+
 	<a
 		href="https://github.com/andy820621/Graph-Image-Generator"
 		target="_blank"
@@ -149,7 +151,7 @@ window.addEventListener("keydown", (e) => {
 		<div class="main">
 			<label class="mirror">
 				<input type="checkbox" v-model="data.mirrorModes" />
-				<span>Mirorr</span>
+				<span>Mirorr Mode</span>
 			</label>
 			<!-- <div>
 				<label for="editing">{{ data.editing }}</label>
@@ -195,6 +197,7 @@ window.addEventListener("keydown", (e) => {
 		</div>
 
 		<div class="control">
+			<h3>Control</h3>
 			<div class="input-control">
 				<label>Width</label>
 				<input
@@ -211,14 +214,14 @@ window.addEventListener("keydown", (e) => {
 					@change="init"
 				/>
 			</div>
-
-			<div>
-				<textarea name="code" :value="code" cols="24" rows="8"></textarea>
-			</div>
-
 			<div class="btn-control">
 				<button @click="init">Clear</button>
 				<button @click="loadDataHandler">Load Data</button>
+			</div>
+
+			<div class="textarea-control">
+				<label for="code">✻ Graph Data Result:</label>
+				<textarea name="code" :value="code" cols="24" rows="8"></textarea>
 			</div>
 		</div>
 	</main>
@@ -228,6 +231,10 @@ window.addEventListener("keydown", (e) => {
 @mixin size($width, $height: $width) {
 	width: $width;
 	height: $height;
+}
+
+h1 {
+	text-align: center;
 }
 button,
 .modeTabs li {
@@ -246,6 +253,9 @@ button,
 }
 main.row {
 	gap: 2.4rem;
+	@media (max-width: 768px) {
+		flex-direction: column-reverse;
+	}
 	label.mirror {
 		padding: 0;
 		cursor: pointer;
@@ -275,10 +285,16 @@ main.row {
 
 	.main,
 	.control {
+		margin-top: 2.4rem;
 		padding: 10px;
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		h3 {
+			font-size: 1.5rem;
+			margin: 0;
+			letter-spacing: 0.08rem;
+		}
 		input,
 		textarea,
 		button {
@@ -286,17 +302,34 @@ main.row {
 			padding: 0.24rem 0.5rem;
 			border: none;
 			border-radius: 0.24rem;
+			max-width: 80vmin;
 		}
 		.input-control,
-		.btn-control {
+		.btn-control,
+		.textarea-control {
 			display: flex;
+		}
+		.input-control {
 			gap: 1rem;
+		}
+		.btn-control {
+			gap: 2rem;
+			margin-top: 0.24rem;
+		}
+		.textarea-control {
+			gap: 0.7rem;
+			font-size: 1.2rem;
+			flex-direction: column;
+			margin-top: 1rem;
 		}
 	}
 }
 .graph {
 	.block {
-		@include size(3.5vmin);
+		@include size(5vmin);
+		@media (min-width: 768px) {
+			@include size(3.5vmin);
+		}
 		border: 1px solid #ddd;
 		background-color: #eee;
 		color: #333;
@@ -315,16 +348,27 @@ main.row {
 	button#addMode {
 		width: max-content;
 		padding: 0.6rem 1.3rem;
+		@media (max-width: 768px) {
+			margin: 1rem auto;
+			display: block;
+		}
 	}
 	ul {
-		padding: 0;
-		margin: 2.4rem 0;
+		margin: 1rem auto;
+		padding: 2rem 0;
+		@media (min-width: 768px) {
+			padding: 0;
+			margin: 2.4rem 0;
+		}
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
 		column-gap: 1.25rem;
 		row-gap: 1.6rem;
-		width: 60vmin;
+		width: 80%;
+		@media (min-width: 768px) {
+			width: 60vmin;
+		}
 		li {
 			position: relative;
 			background-color: #eee;
