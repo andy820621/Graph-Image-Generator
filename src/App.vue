@@ -261,7 +261,7 @@ main.row {
 }
 .graph {
 	.block {
-		@include size(2.4vmin);
+		@include size(3.5vmin);
 		border: 1px solid #ddd;
 		background-color: #eee;
 		color: #333;
@@ -289,7 +289,7 @@ main.row {
 		flex-wrap: wrap;
 		column-gap: 1.25rem;
 		row-gap: 1.6rem;
-		width: 36vmin;
+		width: 60vmin;
 		li {
 			position: relative;
 			background-color: #eee;
