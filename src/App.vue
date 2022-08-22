@@ -360,6 +360,7 @@ main.row {
 		background-color: #eee;
 		color: #333;
 		cursor: pointer;
+		user-select: none;
 		font-size: 14px;
 		&:hover {
 			background-color: #ccc;
