@@ -151,7 +151,7 @@ window.addEventListener("keydown", (e) => {
 		<div class="main">
 			<label class="mirror">
 				<input type="checkbox" v-model="data.mirrorModes" />
-				<span>Mirorr Mode</span>
+				<span>Mirror Mode</span>
 			</label>
 			<!-- <div>
 				<label for="editing">{{ data.editing }}</label>
