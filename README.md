@@ -26,6 +26,45 @@ npm run build
 
 ## Introduction
 
+Copy the following two methods to get the size of the canvas and the binary data of the graph.
+
+```javascript
+// Use this function to convert hex data to binary.
+const convertBinary = (text, sizeX) => {
+	// get hex number, and convert to binary, and then fill string with 0
+	return parseInt(text || 0, 16)
+		.toString(2)
+		.padStart(sizeX, "0");
+};
+```
+
+```javascript
+// Use this function to get canvas X direction size & graph's frames.
+const convertTextToData = (text) => {
+	// get x direction size
+	let dataWidth = text.split(":")[0].split(",")[0];
+	// get frames
+	let graphFrameDatas = text
+		.split(":")[1]
+		.split("#")
+		.map((text) =>
+			text.split("|").map((frameRow) => convertBinary(frameRow, dataWidth))
+		);
+	return [dataWidth, graphFrameDatas];
+};
+```
+
+For example:
+
+```javascript
+// Copy the result from "Graph Data Result" as data's value.
+const dataText =
+	"15,15:|||410|220|7f0|dd8|1ffc|17f4|410|360||||#|||410|1224|17f4|1ddc|ff8|410|808|||||";
+
+// Use funtion to get Size and Frame's data.
+convertTextToData(dataText); // expected to get: Array(2) ["15",[["000000000000000", ...],["000000000000000", ...]]]
+```
+
 ### Add new frame & draw
 
 - Click "Add new Graph" button to add a new canvas for new frame.
