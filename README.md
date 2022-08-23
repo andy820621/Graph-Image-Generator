@@ -59,8 +59,7 @@ For example:
 
 ```javascript
 // Copy the result from "Graph Data Result" as data's value.
-const dataText =
-	"15,15:|||410|220|7f0|dd8|1ffc|17f4|410|360||||#|||410|1224|17f4|1ddc|ff8|410|808|||||";
+const dataText = "15,15:|||410|220|7f0|dd8|1ffc|17f4|410|360||||#|||410|1224|17f4|1ddc|ff8|410|808|||||";
 
 // Use funtion to get Size and Frame's data.
 convertTextToData(dataText); // expected to get: Array(2) ["15",[["000000000000000", ...],["000000000000000", ...]]]
