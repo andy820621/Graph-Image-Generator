@@ -34,7 +34,7 @@ npm run build
 
 - Uncheck "Mirror Mode" button to cancel mirror mode.
 
-![exhibit gif](https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/addmode%26draw.gif)
+<img src="https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/addmode%26draw.gif" width="600">
 
 ### Two ways to change different Frame
 
@@ -42,7 +42,7 @@ npm run build
 
 - Type the number key to quickly switch to that number's frame .
 
-![exhibit gif](https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/modeChange.gif)
+<img src="https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/modeChange.gif" width="600">
 
 ### Two ways to start a new graph
 
@@ -50,10 +50,10 @@ npm run build
 
 - Change width or height value to get a different size canvas to start new Graph.
 
-![exhibit gif](https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/clear%26sizeChange.gif)
+<img src="https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/clear%26sizeChange.gif" width="600">
 
 ### Load Data
 
 Click "loadData" button and enter data to show the Graph.
 
-![exhibit gif](https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/loadData.gif)
+<img src="https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/loadData.gif" width="600">
