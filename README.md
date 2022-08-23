@@ -6,12 +6,9 @@ Use Vue3 to build this Website, and use Scss as css preprocessor, and use Vite a
 
 Click to see this [Website](https://graph-image-generator.vercel.app/).
 
-<br>
+<hr>
 
-
-## Introduction
-
-<br>
+# Introduction
 
 ### Project Setup
 
