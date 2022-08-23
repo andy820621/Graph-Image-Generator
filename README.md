@@ -4,37 +4,44 @@ Use Vue3 to build this Website, and use Scss as css preprocessor, and use Vite a
 
 ## Website
 
-Go to [Website](https://graph-image-generator.vercel.app/) to see the Website.
+Click to see this [Website](https://graph-image-generator.vercel.app/).
 
-## Project Setup
+<br>
+
+
+## Introduction
+
+<br>
+
+### Project Setup
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+#### Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+#### Compile and Minify for Production
 
 ```sh
 npm run build
 ```
 
-## Introduction
+<br>
 
-Copy the following two methods to get the size of the canvas and the binary data of the graph.
+### Method
+
+Use the following two methods to get the size of the canvas and the binary data of the graph.
 
 ```javascript
 // Use this function to convert hex data to binary.
 const convertBinary = (text, sizeX) => {
 	// get hex number, and convert to binary, and then fill string with 0
-	return parseInt(text || 0, 16)
-		.toString(2)
-		.padStart(sizeX, "0");
+	return parseInt(text || 0, 16).toString(2).padStart(sizeX, "0");
 };
 ```
 
@@ -44,12 +51,9 @@ const convertTextToData = (text) => {
 	// get x direction size
 	let dataWidth = text.split(":")[0].split(",")[0];
 	// get frames
-	let graphFrameDatas = text
-		.split(":")[1]
-		.split("#")
+	let graphFrameDatas = text.split(":")[1].split("#")
 		.map((text) =>
-			text.split("|").map((frameRow) => convertBinary(frameRow, dataWidth))
-		);
+			text.split("|").map((frameRow) => convertBinary(frameRow, dataWidth)));
 	return [dataWidth, graphFrameDatas];
 };
 ```
@@ -64,6 +68,7 @@ const dataText =
 // Use funtion to get Size and Frame's data.
 convertTextToData(dataText); // expected to get: Array(2) ["15",[["000000000000000", ...],["000000000000000", ...]]]
 ```
+<br>
 
 ### Add new frame & draw
 
@@ -75,6 +80,8 @@ convertTextToData(dataText); // expected to get: Array(2) ["15",[["0000000000000
 
 <img src="https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/addmode%26draw.gif" width="600">
 
+<br>
+
 ### Two ways to change different Frame
 
 - Click "number" button to change different frame.
@@ -83,6 +90,8 @@ convertTextToData(dataText); // expected to get: Array(2) ["15",[["0000000000000
 
 <img src="https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/modeChange.gif" width="600">
 
+<br>
+
 ### Two ways to start a new graph
 
 - Click "clear" button to clear all frame.
@@ -90,6 +99,8 @@ convertTextToData(dataText); // expected to get: Array(2) ["15",[["0000000000000
 - Change width or height value to get a different size canvas to start new Graph.
 
 <img src="https://github.com/andy820621/Graph-Image-Generator/blob/main/gif/clear%26sizeChange.gif" width="600">
+
+<br>
 
 ### Load Data
 
