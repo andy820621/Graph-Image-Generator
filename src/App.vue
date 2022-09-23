@@ -167,7 +167,9 @@ window.addEventListener("keydown", (e) => {
 					<div
 						class="block"
 						:class="{
-							active: graphData[getArrayId(x - 1, y - 1)]?.value === 1,
+							active:
+								graphData[getArrayId(x - 1, y - 1)] &&
+								graphData[getArrayId(x - 1, y - 1)].value === 1,
 						}"
 						v-for="x in data.settings.width"
 						@click="toggleBlock(x - 1, y - 1)"
